@@ -1,0 +1,20 @@
+#!/bin/bash -x
+
+read -p "Enter the power of 2: " power
+
+Maximum=$((2**$power))
+result=1
+
+echo "Table of powers of 2 upto $Maximum"
+count=0
+while (( $result<$Maximum ))
+do
+	result=$((2**$count))
+	echo "2^$count=$result"
+	if (( $result>=256 ))
+	then
+	   echo "Result exceeding 256.."
+  	   break;
+	fi
+	((count++))
+done
